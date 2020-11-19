@@ -9,17 +9,39 @@ import {Article} from '../../interfaces/interfaces'
 })
 export class Tab1Page implements OnInit {
 
+  noticias: Article[] = [];
+  
   constructor(private noticiasService: NoticiasService) {}
 
-  noticias: Article[] = [];
+  ngOnInit() {
+    this.cargarNoticias();
+  }
 
-  ngOnInit(){
+  loadData( event ) {
+
+    console.log(event);
+
+    this.cargarNoticias( event );
+  }
+
+  cargarNoticias( event? ) {
     this.noticiasService.getTopHeadlines()
-    .subscribe(resp =>{
-      console.log('noticias', resp);
-      this.noticias.push( ...resp.articles );
-    }
-      
-      );
+      .subscribe( resp => {
+        // console.log('noticias', resp );
+
+        if ( resp.articles.length === 0 ) {
+          event.target.disabled = true;
+          event.target.complete();
+          return;
+        }
+
+        // this.noticias = resp.articles;
+        this.noticias.push( ...resp.articles );
+
+        if ( event ) {
+          event.target.complete();
+        }
+
+      });
   }
 }
