@@ -36,3 +36,39 @@
     font-size: 12px;
     color: lightgray;
 }
+
+.action-dark, .action-sheet-group{
+    background-color: var(--ion-color-dark) !important;
+    color: rgb(27, 49, 148) !important;
+    
+}
+
+.action-dark ion-icon {
+    color: rgb(21, 17, 212) !important;
+}
+
+.ios .action-sheet-icon{
+    display: none !important;
+}
+
+.tab-selected{
+    color: var( --ion-color-primary ) !important;
+}
+
+:root {
+    --ion-color-secondary: #b6bc00;
+    --ion-color-secondary-rgb: 0,102,0;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255,255,255;
+    --ion-color-secondary-shade: #005a00;
+    --ion-color-secondary-tint: #1a751a;
+  }
+
+  :root {
+    --ion-color-primary: #3490b0;
+    --ion-color-primary-rgb: 0,102,0;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #005a00;
+    --ion-color-primary-tint: #1a751a;
+  }

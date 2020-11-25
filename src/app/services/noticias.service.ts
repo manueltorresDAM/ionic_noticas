@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 
 
 const apiKey = environment.apiKey;
-const apiUlr = environment.apiUlr;
+const apiUrl = environment.apiUlr;
 
 const headers = new HttpHeaders({
   'X-Api-key': apiKey
@@ -27,7 +27,7 @@ export class NoticiasService {
 
   private ejecutarQuery<T>( query: string ) {
 
-    query = apiUlr + query;
+    query = apiUrl + query;
 
     return this.http.get<T>( query, { headers } );
 
@@ -54,9 +54,9 @@ export class NoticiasService {
     }
 
 
-    // return this.http.get(`https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=dc62b49904694e81adf392d7e45a2365`);
+    //return this.http.get(`https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=dc62b49904694e81adf392d7e45a2365`);
 
-    return this.ejecutarQuery<RespuestaTopHeadlines>(`/top-headlines?country=us&category=${ categoria }&page=${ this.categoriaPage }`);
+   return this.ejecutarQuery<RespuestaTopHeadlines>(`/top-headlines?country=us&category=${ categoria }&page=${ this.categoriaPage }`);
 
 
   }

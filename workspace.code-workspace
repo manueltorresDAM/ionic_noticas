@@ -20,6 +20,15 @@
 		},
 		{
 			"path": "../../angular/angular-firebase-master"
+		},
+		{
+			"path": "../../angular/fotosfirebase"
+		},
+		{
+			"path": "../../angular/angular-login-firebase-master"
+		},
+		{
+			"path": "../../angular/control-clientes-final"
 		}
 	]
 }
